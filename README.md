@@ -1,50 +1,58 @@
-# Nigeria-COVID-19-Data-Analysis-Using-Python
-Data Scientist Microdegree Capstone Project
+# WhatsApp Group Chat Data Analysis
+For the fun of it, and to throw bants, I have taken up this task. lol
 
-## Project Overview
-Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus, and it has affected major parts of the world. Nigeria, a West-African country, has also been affected by the COVID-19 pandemic after recording its first case on 27th February 2020.
+## Introduction
+WhatsApp Messenger is a cross-platform messaging and voice-over-IP (VoIP) service that allows users to send text messages and voice messages, make voice and video calls, and share images, documents, user locations, and other content.
 
-Nigeria is a country with 37 states - Federal Capital Territory included- and a fast-growing economic environment with about 200 million citizens. COVID-19 has affected several country activities as the country steadily progressed from its first case to shutting down major airports, state-wide lockdown, curfews, and reviving its economy.
+The WhatsApp application runs on mobile devices but is also accessible from desktop computers, as long as the user's mobile device remains connected to the Internet while they use the desktop app.
 
-In this project, I employ data science & analytics skills to collect data, explore the data, perform analysis, create visualizations, and generate insights.
+In this project, the usage of WhatsApp in a Group Chat made up of colleagues from the same workspace in analyzed. The intent is to carry out an exploratory data analysis on the interactions within the group in order to discover patterns, test hypothesis, and summarize its main characteristics using basic visualization methods.
+
+A couple of questions are also asked of the data as well, and no doubt, it sure gave us some interesting answers. 😎🥱
+
+## Background Information
+### Data Overview, Scope, Boundary, Approach 
+
+The data source of the analysis is a download of the Group’s WhatsApp Chat record.  WhatsApp has a functionality that enables a download of the conversation logs of individual and group chats. To do this, just select any conversation, click on the dots on the top right, click on 'More' then 'Export chat'.
+
+For this project, we have exported the logs `without media` files. This generates a `.txt` text file which is a time-ordered list of events that occurs within the chat mostly made up of text messages. Each line is a single message and is in the following format:
+
+`date, time - sender: message`
+
+The exported data for this project covers a period that ranges from:
+
+`30/06/2020, 09:21 to 30/06/2021, 17:04`
+
+And does not include an analysis of the usage of multimedia files such as audio, images, voice notes, video, etc sent within the group.
+
 
 ## Steps/Approaches
 
 ### Step 1
-This step involves gathering data needed for the analysis from different sources, some of which are from websites, github repos, or external files.
-
-1. Performed a web scrap to obtain data from the NCDC website. Utilized the BeautifulSoup library to achieve this.
-2. Imported data from the John Hopkins github repository.
-3. Imported the provided external data into jupyter notebook.
+Our approach first involves importing all the necessary python libraries into the Jupyter notebook, that will be used for the analysis. 
 
 ### Step 2
-Viewed and obtained basic information like `head()` and `info()` about the imported data from the previous step.
+We then define a python function that takes in the raw file (exported WhatsApp conversation) as it’s input and this file is parsed through a python regex function in order to convert it into a pandas dataframe, carrying the right type and format for the data in each column.
 
 ### Step 3
-Here I clean and manipulate the collected data to ensure it is in the right `type` and `format` required for the intended analysis.
+Performed various analysis on the data and recorded the observations and findings. Some of the questions asked of the data are listed below:
 
-### Step 4
-Performed various analysis on the data and recorded my observations and findings, some of which are listed below:
-
-1. Generated a plot that shows the Top 10 states in terms of Confirmed Covid cases by Laboratory test.
-2. Generated a plot that shows the Top 10 states in terms of Discharged Covid cases.
-3. Generated a plot that shows the Top 10 states in terms of Deaths from Covid cases.
-4. Generated line plots for the different columns of data across the entire recorded period to highlight the rate of total cumulative cases.
-5. Determined the daily infection rate.
-6. Calculated maximum infection rate in a day and on what date this was registered.
-7. Determined the relationship between the external dataset(**Overall community vulnerability index**) and the NCDC COVID-19 dataset.
-8. Generated a regression plot between **Confirmed Cases and Population Density** to visualize the linear relationships.
-9. Calculated the maximum deaths in a day and on what date this was registered.
-10. Generated a regression plot between **Death Cases and Age** to visualize the linear relationships.
-11. Analyzed the effect of the pandemic on the country's economy be comparing its RealGDP across the period, as well as the state budgets.
-
+1. Most active users in the group?
+2. Average number of messages per day?
+3. Most active time of day in chat room?
+4. Most active months of conversations?
+5. The emoji y’all used the most or the least?
+6. Emoji usage by specific group members?
+7. A word cloud of the commonly used words?
+8. Distinct conversations within the group?
+9. Who starts the most conversations?
+10. Weekday versus Weekend usage pattern?
+11. etc…
 
 ## Suggestions on future work/Improvement plans
 
-To expand upon this project, other external datasets outside what has been used in this project can be explored. More questions can be asked and answered in addition to the analysis done here. 
-* Impact of COVID-19 on employment or unemployment statistics.
-* Which industries thrived or were in a decline due to COVID-19?
-* What goods and services were in high and low demands at the height of the pandemic?
-* The effect of Vaccine rollout on number of confirmed cases.
-* Comparison of testing capacity in a region versus confirmed cases.
-* etc
+With every Data Analysis Project, there’s always room to expand upon the results, there’s always more questions that can be asked of the data, there’s always a hypothesis to test, there’s always more insights that can be gleaned.
+
+Looking forward to hearing your thoughts on this, especially challenging the inferences and conclusions that the data has presented to us.
+
+Let me know of any questions you would love to ask of the data; until then I don’t want any of you fighting over the results in this report. God bless y’all.
